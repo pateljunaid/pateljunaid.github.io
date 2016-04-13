@@ -10,7 +10,9 @@
 	color:#2c3e50;
 	display:table-cell;
 	border-style:solid;
+	text-decoration: none !important;
 }
+
 
 /*!
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
@@ -37,6 +39,7 @@ a:active,
 a.active {
     outline: 0;
     color: #18bc9c;
+	text-decoration:none;
 }
 
 h1,
