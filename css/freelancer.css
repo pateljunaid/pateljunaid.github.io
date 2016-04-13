@@ -1,7 +1,16 @@
 /*
  *My custom classes
  */
-
+.portfolio-item-box{
+	font-size: 30px;
+	height: 150px;
+	width: 360px;
+	text-align:center;
+	vertical-align:middle;
+	color:#2c3e50;
+	display:table-cell;
+	border-style:solid;
+}
 
 /*!
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
@@ -63,7 +72,7 @@ hr.star-primary:after {
 }
 
 hr.star-light {
-    border-color: #fff;
+    /*border-color: #fff;*/
 }
 
 hr.star-light:after {
@@ -72,7 +81,9 @@ hr.star-light:after {
 }
 
 hr.star-primary {
-    border-color: #2c3e50;
+	color: #fff;
+    /*border-color: #2c3e50;*/
+	border-color: #fff;
 }
 
 hr.star-primary:after {
@@ -86,8 +97,8 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #fff;
-    background: #18bc9c;
+    /*color: #000;
+    background: #18bc9c;*/
 }
 
 header .container {
