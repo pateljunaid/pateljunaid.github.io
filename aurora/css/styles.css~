@@ -1,0 +1,94 @@
+/*Issues that need to be fixed:
+- 
+*/
+
+#main{
+	background: url('../img/background.jpg') no-repeat center center fixed ;
+	position:fixed;
+	background-size:cover;
+	width:100%;
+	height:100%;
+}
+
+.footer-image{
+	width: 25px;
+	height: 25px;
+}
+
+.home-hero{
+    -webkit-animation: fadein 700ms;	
+	position:relative;
+	top: 5vh;
+	text-align: center;
+	color: white;
+	
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.home{
+	font-family:"Verdana";
+	font-size: 1.25em;
+	text-align: center;
+	text-shadow: 1px 1px black;
+	top:38vh;
+}
+
+.developer{
+	height:120px;
+	width:120px;
+}
+
+.footer{
+	font-style:italic;
+	color: white;
+	background-color: black;
+	text-align: right;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 30px;
+	padding: 5px;
+}
+
+.home-menu{
+	font-size: 125%;
+}
+
+
+.icons{
+	height:50px;
+	width:50px;
+}
+
+.browse-box, .add-box{
+	max-width: 200px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 6px;
+	margin-right: 6px;
+	font-family: arvo;
+	vertical-align: middle;
+	background-color: black;
+	display: inline-block;
+	border: 4px solid;
+    border-radius: 4px;
+	border-color: transparent;
+	opacity:0.5;
+}
+
+input{
+	color: black;
+}
+
+.form-horizontal, .editActions{
+	width: 40%;
+}
+
+#synopsis{
+	vertical-align: top;
+	height:70px;
+}

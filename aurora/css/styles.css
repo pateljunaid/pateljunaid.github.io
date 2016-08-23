@@ -1,0 +1,123 @@
+#main{
+	background: url('../img/background.jpg') no-repeat center center fixed ;
+	position:fixed;
+	
+	background-size:cover;
+	width:100%;
+	height:100%;
+	overflow: scroll;
+}
+
+/*Step 1 SUBMITTED EARLY, BUT MINOR UI CHANGES MADE AFTER THE EARLY BIRD SUBMIT DEADLINE: Changed background image, changed name of the app, etc.*/
+
+.footer-image{
+	width: 25px;
+	height: 25px;
+}
+
+.home-hero{
+    -webkit-animation: fadein 700ms;	
+	position:relative;
+	top: 15vh;
+	text-align: center;
+	color: white;
+	
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.home{
+	font-family:"Verdana";
+	font-size: 1.25em;
+	text-align: center;
+	text-shadow: 1px 1px black;
+	top:38vh;
+}
+
+.developer{
+	height:120px;
+	width:120px;
+}
+
+.footer{
+	font-style:italic;
+	color: white;
+	background-color: black;
+	text-align: right;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 30px;
+	padding: 5px;
+}
+
+.home-menu{
+	font-size: 125%;
+}
+
+
+.icons{
+	height:50px;
+	width:50px;
+}
+
+.browse-box, .add-box{
+	max-width: 200px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 6px;
+	margin-right: 6px;
+	font-family: arvo;
+	vertical-align: middle;
+	background-color: black;
+	display: inline-block;
+	border: 4px solid;
+    	border-radius: 4px;
+	border-color: transparent;
+	opacity:0.5;
+}
+
+input{
+	color: black;
+}
+
+.form-horizontal, .editActions{
+	display: table-cell;
+	width: 40%;
+	font-family: Andika;
+}
+
+#synopsis{
+	vertical-align: top;
+	height:70px;
+}
+
+#panel-container{
+	height: 20px;
+	position: relative;
+	bottom:50px;
+}
+
+#panel{
+	display:none;
+	width: 100%;
+	
+}
+
+.edit-poster{
+	display: table-cell;
+	position:relative;
+}
+
+.upload-button{
+	position:relative;
+	left: 200px;
+}
+
+.thumbs{
+	color:white;
+	background-color:black;
+}

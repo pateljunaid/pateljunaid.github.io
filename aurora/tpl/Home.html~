@@ -1,0 +1,9 @@
+<link href="css/styles.css" rel="stylesheet">
+<div class="home-hero">
+<div class="home">
+	<!--Content of the Home page-->
+	<h1>Aurora</h1>
+	<h3>Your perfect time to stream free movies</br>Add your own personal data<br/>The #1 Movie App<br/></h3>
+	<div class="browse-box"><img class="icons" src="img/browse.png">Browse Movies</div><div class="add-box"><img class="icons" src="img/add_new.png">Add Movie</div>
+</div>
+</div>

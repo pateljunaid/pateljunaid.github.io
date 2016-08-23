@@ -1,0 +1,131 @@
+
+
+
+
+
+
+
+
+/*------------------------
+Tasks
+
+- Go through the whole FAQ
+- Fix all the style issues and css and UI
+- Go through tutorial handouts (after #2)
+
+--------------------------*/
+
+
+
+
+
+
+
+// catch simple errors
+"use strict";
+
+// declare aurora-app namespace if it doesn't already exist
+var aurora =  aurora || {};
+
+// Define Backbone router
+aurora.AppRouter = Backbone.Router.extend({
+
+    // Map "URL paths" to "router functions"
+    routes: {
+        	"": "home",
+		"Home": "home",
+		"About": "about",
+		"movies": "movies",
+		"movies/add": "details",
+		"movies/:id": "idMovies"
+    },
+
+    // When an instance of an AppRouter is declared, create a Header view
+    initialize: function() {
+	// instantiate a Header view
+        this.headerView = new aurora.Header();  
+	// insert the rendered Header view element into the document DOM
+        $('.header').html(this.headerView.render().el);
+    },
+
+    home: function() {
+	//Setting the clicked button's bg to black
+	this.headerView.selectMenuItem('.home-menu');
+		
+	// If the Home view doesn't exist, instantiate one
+        if (!this.homeView) {
+            this.homeView = new aurora.Home();
+        };
+	// insert the rendered Home view element into the document DOM
+        $('#content').html(this.homeView.render().el);
+    },
+		
+	about: function() {
+	//Setting the clicked button's bg to black
+		this.headerView.selectMenuItem('.about-menu');
+		
+	// If the About view doesn't exist, instantiate one
+        if (!this.aboutView) {
+            this.aboutView = new aurora.About();
+        };
+	// insert the rendered About view element into the document DOM
+        $('#content').html(this.aboutView.render().el);
+	 },
+	 
+	 details: function() {
+	//Setting the clicked button's bg to black
+		this.headerView.selectMenuItem('.addMovies-menu');
+		
+	// If the Details view doesn't exist, instantiate one
+        if (!this.detailsView) {
+            this.detailsView = new aurora.Details();
+        };
+	// insert the rendered Details view element into the document DOM
+        $('#content').html(this.detailsView.render().el);
+	 }/*
+
+	// If the About view doesn't exist, instantiate one
+        if (!this.aboutView) {
+            this.aboutView = new aurora.About();
+        };
+	// insert the rendered About view element into the document DOM
+        $('#content').html(this.aboutView.render().el);
+	 },
+	 
+	 movies: function() {
+	//Setting the clicked button's bg to black
+		this.moviesView.selectMenuItem('.movies-menu');
+		
+	// If the View doesn't exist, instantiate one
+        if (!this.moviesView) {
+            this.moviesView = new aurora.Movies();
+        };
+	// insert the rendered About view element into the document DOM
+        $('#content').html(this.moviesView.render().el);
+	 },
+	 
+
+	 
+	 
+	 
+	  idMovies: function() {
+	//Setting the clicked button's bg to black
+		this.headerView.selectMenuItem('.idMovies-menu');
+		
+	// If the idMovies view doesn't exist, instantiate one
+        if (!this.idMoviesView) {
+            this.idMoviesView = new aurora.idMovies();
+        };
+	// insert the rendered idMovies view element into the document DOM
+        $('#content').html(this.idMoviesView.render().el);
+	 }*/
+
+});
+
+// Load HTML templates for Home, Header, About, Details views, and when
+// template loading is complete, instantiate a Backbone router
+// with history.
+aurora.utils.loadTemplates(['Home', 'Header', 'About', 'Details'], function() {
+    aurora.app = new aurora.AppRouter();
+    Backbone.history.start();
+});

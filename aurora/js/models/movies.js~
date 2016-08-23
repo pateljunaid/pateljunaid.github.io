@@ -1,0 +1,30 @@
+// catch simple errors
+"use strict";
+
+// declare aurora-app namespace if it doesn't already exist
+var aurora =  aurora || {};
+
+//Define Model
+aurora.Movie = Backbone.Model.extend({
+	// match localStorage (later server DB)
+	// use of _id, rather than id
+	idAttribute: "_id",
+	
+	defaults: {
+	title: "",
+	released: "",
+	director: "",
+	starring: [],
+	rating: "",
+	duration: null,
+	genre: [],
+	synopsis: "",
+	freshTotal: 0.0,
+	freshVotes: 0.0,
+	trailer: null,
+	poster: "img/placeholder.png",
+	dated: new Date()
+	}
+});
+
+

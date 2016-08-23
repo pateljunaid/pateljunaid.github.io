@@ -1,0 +1,26 @@
+<link href="css/styles.css" rel="stylesheet">
+<div class="home-hero">
+	<div class="thumbnails col-lg-2 col-md-3 col-sm-4 col-xs-6">
+  <div class="thumbnail plain" title="some message">
+    <div class="thumbs">
+      <a href="#movies/<%= id%>" class="plain">
+        <video class="img-responsive" controls poster="<%= poster %>" >
+            <source src="<%= trailer %>" type="video/mp4"/>
+            <!-- fallback -->
+            <%= title%>
+        </video>
+
+        <div class="movie-info">
+          <%= title %> (<%= released %>)<br/>
+		  Directed by: <%= director %><br/>
+		  Starring: <%= starring %><br/>
+		  Genres: <%= genre %> Rating: <%=rating%>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+

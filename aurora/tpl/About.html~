@@ -1,0 +1,20 @@
+<link href="css/styles.css" rel="stylesheet">
+<div class="home-hero">
+	<!--Content of the About page-->
+	<h1>Aurora</h1>
+    	<h3>This app allows users to
+	<li>Browse great movies</li>
+	<li>Add new movies</li>
+	<li>Have a great time!</li>
+	<br/>
+	<u>Development Team</u><br/><br/>
+	<img class="developer" src="img/avatar.png"><br/><br/>
+	Junaid Patel<br/>University of Toronto<br/>Undergrad Student<br/>
+	<br/>
+	<u>Contact Us</u><br/>
+	(647) 123-1234<br/>
+	3232 Maple Street<br/>
+	Fair Lawn, NJ 07410<br/>
+	</p>
+	</h3>
+</div>
