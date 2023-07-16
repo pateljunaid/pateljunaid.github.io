@@ -1,36 +1,202 @@
-import React, { useContext } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import React, { Component } from 'react';
+import Typist from 'react-typist';
+import './App.css';
+import Configs from './configurations.json';
 
-import { ThemeContext } from './contexts/ThemeContext';
-import { Main, BlogPage, ProjectPage } from './pages'
-import { BackToTop } from './components'
-import ScrollToTop from './utils/ScrollToTop'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      darkBackgroundModes: [
+        'day',
+        'terminal',
+        'torquoise',
+        'alizarin',
+        'amythyst',
+        'carrot',
+        'peterriver'
+      ],
+      lightBackgroundModes: [
+        'night',
+        'lightred',
+        'lightpurple',
+        'lightgreen',
+        'lightblue',
+        'lightyellow'
+      ],
+      backgroundType: Configs.backgroundType || 'plain',
+      appClass: Configs.plainBackgroundMode || 'daylight',
+      devIntro: Configs.devIntro || 'Lorem Ipsum',
+      devDesc:
+        Configs.devDesc ||
+        'Aute veniam ut deserunt cillum irure pariatur Lorem dolore anim nostrud quis veniam elit culpa.',
+      backgroundMode: 'default',
+      backgroundIndex: 0,
+      bgStyle: {},
+      icons: Configs.icons || []
+    };
+  }
 
-import './App.css'
+  componentWillMount = () => {
+    if (this.checkIfPlainTypeEnabled()) {
+      return true;
+    } else if (this.checkIfGradientTypeEnabled()) {
+      this.setState({
+        appClass: 'gradient',
+        bgStyle: this.prepareGradientStyleSheets()
+      });
+    } else if (this.checkIfImageTypeEnabled()) {
+      this.setState({
+        appClass: 'full-bg-image',
+        bgStyle: this.prepareBackgroundImageStyle()
+      });
+    }
+  };
 
-function App() {
+  checkIfNightModeEnabled = () => {
+    return (
+      this.state.backgroundType === 'plain' &&
+      this.state.appClass === 'nightlight'
+    );
+  };
 
-  const { theme } = useContext(ThemeContext);
+  checkIfDayModeEnabled = () => {
+    return (
+      this.state.backgroundType === 'plain' &&
+      this.state.appClass === 'daylight'
+    );
+  };
 
-  console.log("%cDEVELOPER PORTFOLIO", `color:${theme.primary}; font-size:50px`);
-  console.log("%chttps://github.com/hhhrrrttt222111/developer-portfolio", `color:${theme.tertiary}; font-size:20px`);
-  // console.log = console.warn = console.error = () => {};
+  checkIfGradientTypeEnabled = () => {
+    return this.state.backgroundType === 'gradient';
+  };
 
-  return (
-    <div className="app">
-      <Router>
-        <ScrollToTop/>
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/blog" exact component={BlogPage} />
-          <Route path="/projects" exact component={ProjectPage} />
+  checkIfPlainTypeEnabled = () => {
+    return this.state.backgroundType === 'plain';
+  };
 
-          <Redirect to="/" />
-        </Switch>
-      </Router>
-      <BackToTop />
-    </div>
-  );
+  checkIfImageTypeEnabled = () => {
+    return this.state.backgroundType === 'image';
+  };
+
+  prepareGradientStyleSheets = () => {
+    if (Configs.gradientColors) {
+      return {
+        background: 'linear-gradient(-45deg, ' + Configs.gradientColors + ')',
+        backgroundSize: '400% 400%'
+      };
+    } else {
+      return {
+        background:
+          'linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB)',
+        backgroundSize: '400% 400%'
+      };
+    }
+  };
+
+  prepareBackgroundImageStyle = () => {
+    if (Configs.backgroundImageUrl) {
+      return {
+        background:
+          'url("' +
+          Configs.backgroundImageUrl +
+          '") no-repeat center center fixed',
+        backgroundSize: 'cover'
+      };
+    } else {
+      return {
+        background:
+          'url("/images/sample-background.jpg") no-repeat center center fixed',
+        backgroundSize: 'cover'
+      };
+    }
+  };
+
+  getDefaultModeBasedOnBackgroundType = () => {
+    if (this.checkIfNightModeEnabled()) {
+      return this.state.lightBackgroundModes[0];
+    } else if (this.checkIfDayModeEnabled()) {
+      return this.state.darkBackgroundModes[0];
+    }
+  };
+
+  changeThemeMode = e => {
+    if (this.checkIfNightModeEnabled()) {
+      this.setState({
+        appClass: 'daylight',
+        backgroundIndex: 0,
+        backgroundMode: this.state.darkBackgroundModes[0]
+      });
+    } else if (this.checkIfDayModeEnabled()) {
+      this.setState({
+        appClass: 'nightlight',
+        backgroundIndex: 0,
+        backgroundMode: this.state.lightBackgroundModes[0]
+      });
+    }
+  };
+
+  changeBackgroundBasedonMode = () => {
+    if (
+      this.checkIfNightModeEnabled() &&
+      this.state.backgroundIndex < this.state.lightBackgroundModes.length - 1
+    ) {
+      this.setState({
+        backgroundIndex: this.state.backgroundIndex + 1,
+        backgroundMode: this.state.lightBackgroundModes[
+          this.state.backgroundIndex + 1
+        ]
+      });
+    } else if (
+      this.checkIfDayModeEnabled() &&
+      this.state.backgroundIndex < this.state.darkBackgroundModes.length - 1
+    ) {
+      this.setState({
+        backgroundIndex: this.state.backgroundIndex + 1,
+        backgroundMode: this.state.darkBackgroundModes[
+          this.state.backgroundIndex + 1
+        ]
+      });
+    } else {
+      this.setState({
+        backgroundIndex: 0,
+        backgroundMode: this.getDefaultModeBasedOnBackgroundType()
+      });
+    }
+  };
+
+  render() {
+    const {
+      appClass, bgStyle, backgroundMode, devIntro, devDesc, icons
+    } = this.state;
+
+    return (
+      <div className={ appClass } style={ bgStyle }>
+        <div className="change-mode" onClick={this.changeThemeMode} />
+        <div
+          className={ backgroundMode }
+          onClick={this.changeBackgroundBasedonMode}>
+          <main className="App-main">
+            <h1 className="intro">{ devIntro }</h1>
+            <div className="tagline">
+              <Typist>{ devDesc }</Typist>
+            </div>
+            <div className="icons-social">
+              {icons.map(icon => (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={ `${icon.url}` }
+                >
+                  <i className={ `fab ${icon.image}` } />
+                </a>
+              ))}
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -2,19 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import ThemeContextProvider from './contexts/ThemeContext'
+import * as serviceWorker from './serviceWorker';
 
+ReactDOM.render( < App / > , document.getElementById('root'));
 
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
-ReactDOM.render(
-    <ThemeContextProvider>
-      <App />
-    </ThemeContextProvider>,
-  document.getElementById('root')
-);
-
-
-reportWebVitals();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.register();
