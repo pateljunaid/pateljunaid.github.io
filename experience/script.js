@@ -56,7 +56,7 @@ function(){
         $("#favicon").attr("href","/assets/images/favicon.png");
     }
     else {
-        document.title = "Come Back To Portfolio";
+        document.title = "Come Back!";
         $("#favicon").attr("href","/assets/images/favhand.png");
     }
 });
