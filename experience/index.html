@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="./style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Start the Font Awesome webfonts in parallel with its stylesheet -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-brands-400.woff2">
     <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
 
     <title>Experience | Portfolio Junaid Patel</title>
@@ -24,7 +27,7 @@
             <li><a href="/#about">About</a></li>
             <li><a href="/#skills">Skills</a></li>
             <!-- <li><a href="/#education">Education</a></li> -->
-            <!-- <li><a href="/#work">Work</a></li> -->
+            <li><a href="/#work">Work</a></li>
             <li><a class="active" href="/#experience">Experience</a></li>
             <!-- <li><a href="/#contact">Contact</a></li> -->
             </ul>
@@ -45,6 +48,18 @@
     <div class="container right">
       <div class="content">
         <div class="tag">
+          <h2>Flipp</h2>
+        </div>
+        <div class="desc">
+            <h3>Software Engineer</h3>
+            <p>October 2023 - Present</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
           <h2>Achievers</h2>
         </div>
         <div class="desc">
@@ -54,14 +69,26 @@
       </div>
     </div>
 
-    <div class="container left">
+    <div class="container right">
       <div class="content">
         <div class="tag">
           <h2>Tulip Retail</h2>
         </div>
         <div class="desc">
-            <h3>Software Developer II</h3>
+            <h3>Intermediate Full Stack Developer</h3>
             <p>January 2018 - August 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Lucova Inc.</h2>
+        </div>
+        <div class="desc">
+            <h3>Software Developer</h3>
+            <p>October 2016 - September 2017</p>
         </div>
       </div>
     </div>
@@ -69,19 +96,7 @@
     <div class="container right">
       <div class="content">
         <div class="tag">
-          <h2>Lucova Inc.</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack | Android Developer</h3>
-            <p>October 2016 - September 2017</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Osler, Hoskin & Harcourt LLP</h2>
+          <h2>Osler, Hoskin &amp; Harcourt LLP</h2>
         </div>
         <div class="desc">
             <h3>Web Developer Co-op</h3>
@@ -117,7 +132,6 @@
           <a href="/#home"><i class="fas fa-chevron-circle-right"></i> home</a>
           <a href="/#about"><i class="fas fa-chevron-circle-right"></i> about</a>
           <a href="/#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="/#education"><i class="fas fa-chevron-circle-right"></i> education</a>
           <a href="/#work"><i class="fas fa-chevron-circle-right"></i> work</a>
           <a href="/#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
       </div>
@@ -125,7 +139,7 @@
       <div class="box">
           <h3>contact info</h3>
           <p> <i class="fas fa-envelope"></i>pateljunaid09@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Ontario, Canada</p>
+          <p> <i class="fas fa-map-marked-alt"></i>Toronto, ON, Canada</p>
           <div class="share">
 
             <a href="https://www.linkedin.com/in/junaidpatel" class="fab fa-linkedin" target="_blank"></a>
@@ -135,7 +149,7 @@
       </div>
   </div>
 
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/junaidpatle"> junaid patel</a></h1>
+  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/junaidpatel"> junaid patel</a></h1>
 
 </section>
 <!-- footer section ends -->
@@ -147,13 +161,13 @@
 
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
 <!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js" integrity="sha512-Kr+RPfLjQ71E0cJ9nseJ6jwTrnmMnuSPnnsVQQ/ZYYCjOHKfJcWj8ILICXnvf9A7ZQChNzIbr9x/ZAxA6xAZlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
-<script src="./script.js"></script>
+<script defer src="./script.js"></script>
 
 </body>
 </html>
